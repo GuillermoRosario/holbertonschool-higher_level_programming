@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 number = 98 
-f"{number} Battery Sreet"
+print('{:d}" .format(number) + 'Battery Sreet')
