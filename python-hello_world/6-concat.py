@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 str1 = "Holberton"
 str2 = "School"
-str3 = "Welcome to"
-print(f"{str3} {str1} {str2}!")
+myorder = "Welcome to {} {}!"
+print(myorder.format(str1, str2))
