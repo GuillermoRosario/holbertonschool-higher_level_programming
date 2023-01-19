@@ -2,7 +2,7 @@
 def pow(a, b):
     base = a
     exp = b 
-    for i in range(0, exp):
+    for i in range(0, exp - 1):
         base = base * base
     result = base
     return (result) 
