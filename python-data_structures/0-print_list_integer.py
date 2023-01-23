@@ -2,4 +2,5 @@
 
 def print_list_integer(my_list=[]):
     my_list = [1, 2, 3 , 4, 5]
-    print("{} + \n".format(my_list))
+    result = f'{my_list[0]} {my_list[1]} {my_list[2]} {my_list[3]} {my_list[4]}'
+    print(result)
