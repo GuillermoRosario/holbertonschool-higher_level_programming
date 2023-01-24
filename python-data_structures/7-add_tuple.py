@@ -3,7 +3,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     new_tuple = add_tuple(tuple_a, tuple_b)
     res = []
-        for i in range(0,len(tuple_a)):
+    for i in range(0,len(tuple_a)):
             res.append(tuple_a[i]+tuple_b[i])
             res = tuple(res)
         print(str(res))
