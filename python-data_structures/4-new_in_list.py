@@ -1,4 +1,4 @@
-#!/usr/bin/python3i
+#!/usr/bin/python3
 def new_in_list(my_list, idx, element):
 
     new_list = list(my_list)
