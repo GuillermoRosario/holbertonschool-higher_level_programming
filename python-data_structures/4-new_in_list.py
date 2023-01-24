@@ -1,7 +1,5 @@
 #!/usr/bin/python3i
-
 def new_in_list(my_list, idx, element):
-
 
     new_list = list(my_list)
     length = len(my_list) - 1
