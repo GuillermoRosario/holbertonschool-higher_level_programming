@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-# Modify Index 1, 6 , 10
+
 def search_replace(my_list, search, replace):
-    new_list = my_list[:]
-    for num in range(len(new_list)):
-        if new_list[num] == search:
-            new_list[num] = replace
-        return new_list
+
+    new_list = list(my_list)
+
+    for i in range(len(my_list)):
+        if my_list[i] is search:
+            new_list[i] = replace
+    return new_list
