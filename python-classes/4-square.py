@@ -3,8 +3,8 @@
 
 
 class Square:
-    """Write an empty class square that defines a square"""
 
+    """Write an empty class square that defines a square"""
     def __init__(self, size=0):
         """Function to retrieve"""
         if type(size) != int:
