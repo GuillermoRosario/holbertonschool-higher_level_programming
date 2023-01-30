@@ -2,5 +2,5 @@
 ## Creation of an empty class defining a Square ##
 class Square:
     pass
-obj = Square()
-print(obj)
+my_square = Square()
+print(type(my_square))
