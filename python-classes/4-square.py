@@ -2,7 +2,6 @@
 """Creation of an empty class defining a Square"""
 
 
-
 class Square:
     """Write an empty class square that defines a square"""
     def __init__(self, size=0):
@@ -21,6 +20,7 @@ class Square:
     @property
     def size(self):
         return self.__size
+
     @size.setter
     def size(self, value):
         if type(value) != int:
