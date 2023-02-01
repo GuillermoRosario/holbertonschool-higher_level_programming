@@ -7,16 +7,6 @@ Now use it:
 	>>> add_integer(1,2)
 	3
 
-	>>> add_integer("")
-	Traceback (most recent call last):
-    	...
-	TypeError: a must be an integer
-
-	>>> add_integer
-	Traceback (most recent call last):
-        ...
-        TypeError: b must be an integer
-
 	>>> add_integer(100, -2)
 	98
 
@@ -26,6 +16,16 @@ Now use it:
 	>>>add_integer(100.3, -2)
 	98
 	
+	>>> add_integer("")
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+        >>> add_integer("")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
 	
 
 	
