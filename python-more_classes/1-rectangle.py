@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module is 
+This module is
 a Rectangle class
 """
 
