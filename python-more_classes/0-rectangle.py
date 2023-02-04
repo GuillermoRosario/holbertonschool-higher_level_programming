@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module is a Rectangle Class"""
 class Rectangle:
-    def __init__(self) -> None:
-        pass
+    """Defines a Rectangle"""
+    pass
