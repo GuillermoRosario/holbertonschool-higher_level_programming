@@ -51,6 +51,7 @@ class Rectangle:
         else:
             self.__height = value
         Rectangle.number_of_instances += 1
+
     def area(self):
         return self.__width * self.__height
 
@@ -74,6 +75,7 @@ class Rectangle:
 
     def __repr__(self):
         return f'Rectangle(' + str(self.width) + ', ' + str(self.height) + ')'
-    
+
     def __del__(self):
         print("Bye rectangle...")
+    
