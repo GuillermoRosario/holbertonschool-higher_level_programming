@@ -71,7 +71,6 @@ class Rectangle:
                 draw_rectangle += "#"
 
         return draw_rectangle
-    
+
     def __repr__(self):
         return f'Rectangle(' + str(self.width) + ', ' + str(self.height) + ')'
-    
