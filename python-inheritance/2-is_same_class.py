@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """Defines main Function"""
 
 def is_same_class(obj, a_class):
