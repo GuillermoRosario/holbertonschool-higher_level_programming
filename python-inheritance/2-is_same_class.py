@@ -12,9 +12,8 @@ def is_same_class(obj, a_class):
 
     if a_class == is_same_class:
         return True
-    elif a_class != is_same_class:
-        return False
     elif a_class == int or list:
         return True
     elif a_class != int or list:
         return False
+
