@@ -3,6 +3,7 @@
 
 class BaseGeometry:
 
+
     """Class Documentation"""
 
     pass
