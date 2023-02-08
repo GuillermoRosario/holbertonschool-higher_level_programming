@@ -2,4 +2,7 @@
 """ Create a Class"""
 
 class BaseGeometry:
+
+    """Class Documentation"""
+
     pass
