@@ -14,3 +14,5 @@ def is_same_class(obj, a_class):
         return True
     elif a_class != is_same_class:
         return False
+    elif a_class != [] or int:
+        return False
