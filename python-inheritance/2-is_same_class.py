@@ -8,9 +8,13 @@ def is_same_class(obj, a_class):
 
     """Variable declaration and Condition"""
 
-    a_class = 1
-
-    if a_class == is_same_class:
-        return True
-    elif a_class != is_same_class:
+    if a_class != bool:
+        if obj is True or obj is False: 
+            return False
+    if a_class != object:
+        if isinstance(obj, a_class):
+            return True
+        else: 
+            return False
+    else:
         return False
