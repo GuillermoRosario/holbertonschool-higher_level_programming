@@ -4,6 +4,5 @@
 
 class BaseGeometry:
     """Class Documentation"""
-
-    pass
-
+    def area(self):
+        raise Exception("area() is not implemented")
