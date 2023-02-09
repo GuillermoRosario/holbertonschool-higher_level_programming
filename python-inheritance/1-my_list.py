@@ -8,10 +8,10 @@ class MyList(list):
     """
     This class inherits from a list
     """
-def print_sorted(self):
-    """
-    Print a sorted list in ascending order
-    """
+    def print_sorted(self):
+
+        """ Print a sorted list in ascending order """
+        
     my_list = []
     for num in self:
         my_list.append(num)
