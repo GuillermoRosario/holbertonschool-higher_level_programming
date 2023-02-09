@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 This is the Declaration of a Function that
 if object passed is instance the class is passed
