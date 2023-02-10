@@ -29,4 +29,4 @@ class Rectangle(BaseGeometry):
         """
         Print rectangle info
         """
-        return f"[Rectangle]{self.__width}/{self.__height}"
+        return f"[Rectangle] {self.__width}/{self.__height}"
