@@ -12,7 +12,7 @@ class Square(Rectangle):
     """
     Square is a class from Rectangle
     """
-    def __init__(self,size):
+    def __init__(self, size):
         """
         Initalizes square class by asigning the size
         """
