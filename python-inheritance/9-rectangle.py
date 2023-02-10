@@ -26,7 +26,7 @@ class Rectangle(BaseGeometry):
         Area function
         """
         return self.__width * self.__height
-    
+
     def __str__(self):
         """
         Print rectangle info

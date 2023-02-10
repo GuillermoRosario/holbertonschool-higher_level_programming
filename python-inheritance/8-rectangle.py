@@ -9,9 +9,11 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
+
     """
     Recangle is a child class from BaseGeometry
     """
+
     def __init__(self, width, height):
         """
         Method that validates height and width
