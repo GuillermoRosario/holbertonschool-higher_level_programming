@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that adds all arguments to a Python list
+Script: Adds all arguments to a Python list,
 and then saves them to a file
 """
 import sys
@@ -11,7 +11,7 @@ args = sys.argv
 filename = "add_item.json"
 my_list = []
 
-try: 
+try:
     my_list = load_from_json_file(filename)
 except:
     pass
