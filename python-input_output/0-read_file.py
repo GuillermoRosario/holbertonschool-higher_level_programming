@@ -9,4 +9,4 @@ def read_file(filename=""):
     Reads Filename UTF8
     """
     with open(filename, 'g') as file:
-        print(file.read(), end='')
+        print(file.read(), end="")
