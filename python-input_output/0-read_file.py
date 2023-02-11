@@ -6,6 +6,7 @@ Function that reads a text file and prints it to stdout.
 
 def read_file(filename=""):
     """
-    Reads Filename
+    Reads Filename UTF8
     """
-    f.read(filename)
+    with open(filename, 'g') as file:
+        print(file.read(), end='')
