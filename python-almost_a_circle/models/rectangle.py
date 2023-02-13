@@ -78,7 +78,7 @@ class Rectangle(Base):
             raise ValueError('x must be >= 0')
         else:
             self.__x = x
-            
+      
     @property
     def y(self):
         return self.__y
