@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Create a class named Base
+Create a class named 'Base'
 """
 
 
@@ -8,7 +8,7 @@ class Base:
     """
     Base comment Module
     """
-    _nb_objects = 0
+    __nb_objects = 0
 
     def __init__(self, id=None):
         if id is not None:
