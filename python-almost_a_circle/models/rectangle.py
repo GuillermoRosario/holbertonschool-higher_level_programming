@@ -11,7 +11,9 @@ class Rectangle(Base):
     Class that defines a Rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        
+        """
+        Initialize and assign the value to representations
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -36,14 +38,14 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """Sets the height of the Rectangle"""
-        self.__width = height
+        self.__height = height
 
     @property
     def x(self):
         return self.__x
     
     @x.setter
-    def x(self):
+    def x(self, x):
         self.__x = x
 
     @property
@@ -52,4 +54,4 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        self.__y = y  
+        self.__y = y
