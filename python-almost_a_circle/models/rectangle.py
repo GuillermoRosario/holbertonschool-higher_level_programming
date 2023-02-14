@@ -107,10 +107,7 @@ class Rectangle(Base):
             print('#' * self.__width)
 
     def __str__(self):
-        """Update the class Rectangle by overriding the __str__ method so 
+        """Update the class Rectangle by overriding the __str__ method so
         that it returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return (f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - '
                 f'{self.__width}/{self.__height}')
-    
-    
-    
