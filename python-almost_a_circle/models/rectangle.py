@@ -105,4 +105,3 @@ class Rectangle(Base):
         for hash in range(self.__height):
             print(' ' * self.__x, end="")
             print('#' * self.__width)
-    
