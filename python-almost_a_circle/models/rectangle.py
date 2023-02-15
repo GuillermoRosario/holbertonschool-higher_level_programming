@@ -126,6 +126,6 @@ class Rectangle(Base):
                 self.__height = attribute
             elif argument == 3:
                 self.__x = attribute
-            elif argument == 4
+            elif argument == 4:
                 self.__y = attribute
             argument += 1
