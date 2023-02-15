@@ -14,7 +14,7 @@ class Square(Rectangle):
    """
    def __init__(self, size, x=0, y=0, id=None):
     """
-    Validates super class attributes 
+    Validates super class attributes
     and assigns them
     """
     super().__init__(size, size, x, y, id)
