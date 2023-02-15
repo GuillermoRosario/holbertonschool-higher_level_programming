@@ -122,7 +122,7 @@ class Rectangle(Base):
                 if argument == 0:
                     self.id = attribute
                 elif argument == 1:
-                    self.__width == attribute
+                    self.__width = attribute
                 elif argument == 2:
                     self.__height = attribute
                 elif argument == 3:
