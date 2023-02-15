@@ -116,20 +116,20 @@ class Rectangle(Base):
         """
         assigns an argument to each attribute
         """
-        argument = 0
+        count = 0
         if args is not None:
             for attribute in args:
-                if argument == 0:
+                if count == 0:
                     self.id = attribute
-                elif argument == 1:
+                elif count == 1:
                     self.__width = attribute
-                elif argument == 2:
+                elif count == 2:
                     self.__height = attribute
-                elif argument == 3:
+                elif count == 3:
                     self.__x = attribute
-                elif argument == 4:
+                elif count == 4:
                     self.__y = attribute
-                argument += 1
+                count += 1
 
         for password in kwargs:
             if password == "id":
@@ -142,3 +142,13 @@ class Rectangle(Base):
                 self.__x = kwargs.get(password)
             elif password == "y":
                 self.__y = kwargs.get(password)
+
+    def to_dictionary(self):
+        """Return dictionary representation of the Rectangle."""
+        rectngl_dict = {}
+        rectngl_dict['id'] = self.id
+        rectngl_dict['width'] = self.width
+        rectngl_dict['height'] = self.height
+        rectngl_dict['x'] = self.x
+        rectngl_dict['y'] = self.y
+        return rectngl_dict
