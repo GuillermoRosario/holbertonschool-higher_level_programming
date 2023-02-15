@@ -27,4 +27,3 @@ class Square(Rectangle):
         """
         return (f'[Square] ({self.id}) {self.x}/{self.y} - '
                 f'{self.__width}')
-   
