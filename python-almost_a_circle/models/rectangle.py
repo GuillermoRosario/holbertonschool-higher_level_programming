@@ -112,7 +112,7 @@ class Rectangle(Base):
         return (f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - '
                 f'{self.__width}/{self.__height}')
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         assigns an argument to each attribute
         """
@@ -130,3 +130,15 @@ class Rectangle(Base):
                 elif argument == 4:
                     self.__y = attribute
                 argument += 1
+
+        for password in kwargs:
+            if password == "id":
+                self.id = kwargs.get(password)
+            elif password == "width":
+                self.__width = kwargs.get(password)
+            elif password == "height":
+                self.__height = kwargs.get(password)
+            elif password == "x":
+                self.__x = kwargs.get(password)
+            elif password == "y":
+                self.__y = kwargs.get(password)
