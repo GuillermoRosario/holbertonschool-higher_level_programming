@@ -17,7 +17,7 @@ class Square(Rectangle):
         Validates super class attributes
         and assigns them
         """
-    super().__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
