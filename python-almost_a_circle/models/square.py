@@ -26,4 +26,4 @@ class Square(Rectangle):
         size = width and height
         """
         return (f'[Square] ({self.id}) {self.x}/{self.y} - '
-                f'{self.__width}')
+                f'{self.size}')
