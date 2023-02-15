@@ -117,15 +117,16 @@ class Rectangle(Base):
         assigns an argument to each attribute
         """
         argument = 0 
-        for attribute in args:
-            if argument == 0:
-                self.id = attribute
-            elif argument == 1:
-                self.__width == attribute
-            elif argument == 2:
-                self.__height = attribute
-            elif argument == 3:
-                self.__x = attribute
-            elif argument == 4:
-                self.__y = attribute
-            argument += 1
+        if args is not None:
+            for attribute in args:
+                if argument == 0:
+                    self.id = attribute
+                elif argument == 1:
+                    self.__width == attribute
+                elif argument == 2:
+                    self.__height = attribute
+                elif argument == 3:
+                    self.__x = attribute
+                elif argument == 4:
+                    self.__y = attribute
+                argument += 1
