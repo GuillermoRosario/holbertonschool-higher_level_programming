@@ -26,12 +26,11 @@ class Square(Rectangle):
     @property
     def size(self):
         return self.width
-    
+
     @size.setter
     def size(self, value):
         self.width = value
         self.height = value
-
 
     def __str__(self):
         """
@@ -75,7 +74,7 @@ class Square(Rectangle):
             elif key == "y":
                 (super(__class__, self.__class__)
                     .y.__set__(self, kwargs.get(key)))
-                    
+
     def to_dictionary(self):
         """Return dictionary representation of the Rectangle."""
         sqr_dict = {}
