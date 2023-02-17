@@ -1,0 +1,58 @@
+#This is an Exercises that Helps develop classes and instances Domination
+"""Employee Class Blueprint"""
+class Employee:
+    """Class Variable that applies raise amount"""
+    #Class Variables are used to define attributes that will be used troughout the program. 
+    # We can apply .self individual or ClassName variables that affect the Global Class. 
+    num_of_emps = 0
+    raise_amount = 1.04
+
+    """Init method of Employee"""
+    def __init__(self, first, last, pay):
+        """Instance Variables"""
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + '.' + last + '@gartmediaproductions.com'
+
+        Employee.num_of_emps += 1
+
+    def fullname(self):
+        """Full name method to make it easy to print fullname"""
+        #We Create methods/functions to faccilitate the calling of complex procedures applying code reuse.
+        return (f'{self.first} {self.last}')
+    
+    def pay_and_email(self):
+        """Method to print name and email."""
+        return (f'{self.email} {self.pay}')
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+    """Creation of Employee Class Method"""
+    #Class methods are when you need to have methods that aren't 
+    #specific to any particular instance, but still involve the class in some way.
+    #Class method can acces and modify the class state. 
+    #'cls' in python holds the reference of the class. It is passed as the first argument to every class methods. 
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amount = amount
+
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+    
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+
+"""Instances of the Employee Class"""
+emp_1 = Employee('Raul', 'Gonzales', 1000)
+emp_2 = Employee('Test', 'User', 2500)
+
+import datetime
+my_date = datetime.date(2016, 7, 10) 
+
+print(Employee.is_workday(my_date))
