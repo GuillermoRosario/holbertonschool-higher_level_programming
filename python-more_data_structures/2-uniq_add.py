@@ -7,4 +7,3 @@ def uniq_add(my_list=[]):
         for number in unique_list:
             unique_add += number
         return(unique_add)
-
