@@ -1,4 +1,7 @@
 #!/usr/bin/python3
-#comment
+"""Creation of an empty class defining a Square"""
+
+
 class Square:
+    """Defines a Square"""
     pass
