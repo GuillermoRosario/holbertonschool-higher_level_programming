@@ -15,3 +15,4 @@ class Square:
     def area(self):
         self = self.__size * self.__size
         return self
+    
