@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This Module is a Rectangle
+"""
 class Rectangle:
     pass
 
