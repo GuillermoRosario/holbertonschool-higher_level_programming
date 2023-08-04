@@ -1,28 +1,25 @@
 #!/usr/bin/python3
-"""Lists first states object from the database"""
+"""
+adds the State object Louisiana to a database
+"""
 
-
-import sys
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sys import argv
 from model_state import Base, State
 
 
 if __name__ == "__main__":
-    """Lists first state object from the database"""
-
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    engine = create_engine(
-        f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
-    )
-
-    Session = sessionmaker(bind=engine)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    argv[3]))
+    Base.metadata.create_all(eng)
+    Session = sessionmaker(bind=eng)
     session = Session()
-    state_obj = State(name='Louisiana')
-    session.add(state_obj)
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    state = session.query(State).filter_by(name='Louisiana').first()
+    print(str(state.id))
     session.commit()
-    states = session.query(State).distinct().count()
-    print(states)
+    session.close()

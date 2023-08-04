@@ -1,27 +1,23 @@
 #!/usr/bin/python3
-"""Lists first states object from the database"""
+"""
+changes the name of the State object where id=2 to New Mexico from a database
+"""
 
-
-import sys
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sys import argv
 from model_state import Base, State
 
 
 if __name__ == "__main__":
-    """Lists first state object from the database"""
-
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    engine = create_engine(
-        f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
-    )
-
-    Session = sessionmaker(bind=engine)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    argv[3]))
+    Base.metadata.create_all(eng)
+    Session = sessionmaker(bind=eng)
     session = Session()
-    states = session.get(State, 2)
-    states.name = "New Mexico"
+    state = session.query(State).filter_by(id=2).first()
+    state.name = "New Mexico"
     session.commit()
     session.close()

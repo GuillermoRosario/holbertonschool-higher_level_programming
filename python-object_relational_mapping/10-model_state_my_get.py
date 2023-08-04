@@ -1,31 +1,25 @@
 #!/usr/bin/python3
-"""Print the State object with the name passed"""
+"""
+a script that prints the State object
+with the name passed as argument from the database hbtn_0e_6_usa
+"""
 
-
-import sys
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sys import argv
 from model_state import Base, State
 
-
 if __name__ == "__main__":
-    """Print the State object with the name passed """
-
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    name = sys.argv[4]
-
-    engine = create_engine(
-        f"mysql+mysqldb://{user}:{password}@localhost:3306/{database}"
-    )
-
-    Session = sessionmaker(bind=engine)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    argv[3]))
+    Base.metadata.create_all(eng)
+    Session = sessionmaker(bind=eng)
     session = Session()
-
-    states = session.query(State).filter(State.name.like(name)).scalar()
-
-    if states is not None:
-        print(states.id)
+    nth_state = session.query(State).filter_by(name=argv[4]).first()
+    if nth_state is not None:
+        print(str(nth_state.id))
     else:
         print("Not found")
+    session.close()

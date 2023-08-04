@@ -1,35 +1,26 @@
 #!/usr/bin/python3
-"""
-Script that lists all states with a name starting with N
-from the databse hbtn_0e_0_usa
-"""
+'''
+takes in an argument and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument.
+'''
+
 import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
-    u_name = argv[1]
-    psw = argv[2]
-    base = argv[3]
-    search = argv[4]
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
+    state_name = argv[4]
 
-    # Connecting to MySQL database
-    db = MySQLdb.connect(host="localhost", user=u_name,
-                         passwd=psw, db=base, port=3306)
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=user, password=passwd, db=db)
 
-    # Creating cursor object
     cur = db.cursor()
-
-    proc = ({search},)
-    # Executing MySql Query
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s"
-    cur.execute(query, proc)
-
-    # Obtaining Query Result & prints the result in rows
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-
-    # Clean Up
+    protected = (state_name,)
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s", protected)
+    states = cur.fetchall()
+    for state in states:
+        print(state)
     cur.close()
     db.close()
-    

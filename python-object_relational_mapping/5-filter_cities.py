@@ -1,36 +1,19 @@
 #!/usr/bin/python3
 """
-Script that lists all states with a name starting with N
-from the databse hbtn_0e_0_usa
+python script that lists all cities from the database hbtn_0e_4_usa
 """
+
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
-    u_name = argv[1]
-    psw = argv[2]
-    base = argv[3]
-    state = argv[4]
-
-    # Connecting to MySQL database
-    db = MySQLdb.connect(host="localhost", user=u_name,
-                         passwd=psw, db=base, port=3306)
-
-    # Creating cursor object
-    cur = db.cursor()
-
-    # Executing MySql Query
-    cur.execute("SELECT name FROM cities WHERE state_id = \
-                (SELECT id FROM states WHERE name = '{}')\
-                ORDER BY id".format(state))
-
-    # Obtaining Query Result & prints the result in rows
-    rows = cur.fetchall()
-    lis = []
-    for row in rows:
-        lis.append(row[0])
-    print(', '.join(lis))
-
-    # Clean Up
-    cur.close()
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
+    cursor = db.cursor()
+    cursor.execute("SELECT cities.name FROM cities \
+    JOIN states ON cities.state_id = states.id WHERE states.name LIKE %s \
+    ORDER BY cities.id", (argv[4],))
+    rows = cursor.fetchall()
+    print(", ".join(city[0] for city in rows))
+    cursor.close()
     db.close()
